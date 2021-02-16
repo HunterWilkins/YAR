@@ -1,0 +1,12 @@
+:root {
+  --layer0: rgb(45,45,45);
+
+  --text-color: rgb(230,230,230);
+  --text-size: 18px;
+}
+
+html {
+  background: var(--layer0);
+  color: var(--text-color);
+  font-size: var(--text-size);
+}
