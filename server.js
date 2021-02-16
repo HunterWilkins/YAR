@@ -1,5 +1,6 @@
 const express = require("express");
 const PORT = process.env.PORT || 3001;
+const db = require("./models");
 const app = express();
 
 app.use(express.json());
@@ -14,6 +15,8 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "/client/build", "index.html"));
 });
 
-app.listen(PORT, () => {
-    console.log("Yar is listening on port " + PORT);
-}); 
+db.sequelize.sync().then(function() {
+    app.listen(PORT, () => {
+        console.log("Yar is listening on port " + PORT);
+    }); 
+})
