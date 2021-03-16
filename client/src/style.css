@@ -5,8 +5,20 @@
   --text-size: 18px;
 }
 
+#root {
+  min-height: 100vh;
+}
+
 html {
   background: var(--layer0);
   color: var(--text-color);
   font-size: var(--text-size);
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+
